@@ -1,5 +1,6 @@
 
 
+
 export class Tamagotchi {
   constructor(name, healthLevel, foodLevel) {
     this.name = name;
@@ -21,16 +22,19 @@ export class Tamagotchi {
   setFood() {
     setInterval(() => {
       this.foodLevel--;
-      console.log(this.foodLevel);
+      // console.log(this.foodLevel);
     }, 1000);
   }
 
   didTamagotchiLive() {
-    if (this.foodLevel > 0 && this.healthLevel > 0) {
-      return  true;
-    } else {
-      return false;
-    }
+    setInterval(() => {
+      if (this.foodLevel > 0 && this.healthLevel > 0) {
+        return  true;
+      } else {
+        alert("dead");
+        return false;
+      }
+    }, 1000);
   }
 
   feed() {

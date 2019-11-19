@@ -9,12 +9,18 @@ import { Tamagotchi } from './../src/tamagotchi.js';
         event.preventDefault();
         let myTamaName = $("#tamaName").val();
         let thisTama = new Tamagotchi(myTamaName, 10, 10);
-        // thisTama.setHealth();
+        thisTama.setHealth();
         thisTama.setFood();
-        console.log(thisTama);
+        thisTama.didTamagotchiLive();
+
 
         $("#feedBtn").click(function() {
           thisTama.feed();
         });
-      });  
+        $("#hugBtn").click(function() {
+          thisTama.hug();
+        });
+
+
+      });
     });
