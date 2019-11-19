@@ -7,10 +7,10 @@ export class Tamagotchi {
     this.foodLevel = foodLevel;
   }
 
-
   setHealth() {
     setInterval(() => {
       this.healthLevel--;
+      console.log(this.healthLevel);
     }, 1000);
   }
 
@@ -18,14 +18,12 @@ export class Tamagotchi {
     this.healthLevel = this.healthLevel + 2;
   }
 
-
   setFood() {
     setInterval(() => {
       this.foodLevel--;
+      console.log(this.foodLevel);
     }, 1000);
   }
-
-
 
   didTamagotchiLive() {
     if (this.foodLevel > 0 && this.healthLevel > 0) {
@@ -33,9 +31,10 @@ export class Tamagotchi {
     } else {
       return false;
     }
-  };
+  }
 
   feed() {
-    this.foodLevel = this.foodLevel + 2;
+    this.foodLevel = this.foodLevel + 2
+    console.log(this.foodLevel);
   }
-};
+}
